@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from AnUrl.views import Url_Redirect_View
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^(?P<shortcode>[\w-]+)/$', Url_Redirect_View),
 ]
